@@ -1,11 +1,19 @@
-import { useState } from "react";
 import React from "react";
+import { BrowserRouter, Route, Routes } from "react-router";
 import "./App.css";
+import AuthLayout from "./layout/AuthLayout/AuthLayout";
+import MainLayout from "./layout/MainLayout/MainLayout";
 
 function App() {
   return (
     <>
-      <h1 className="">Hello World</h1>
+      <BrowserRouter>
+        <Routes>
+          <Route index path="/" element={<AuthLayout />} />
+
+          <Route path="/home" element={<MainLayout />} />
+        </Routes>
+      </BrowserRouter>
     </>
   );
 }
