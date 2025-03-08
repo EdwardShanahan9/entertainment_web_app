@@ -1,12 +1,16 @@
 import React from "react";
 import { Outlet } from "react-router";
+import LogoIcon from "../../assets/icons/logo.svg";
 const AuthLayout = () => {
   return (
-    <div>
-      <h2>Auth Layout</h2>
-
+    <div className="flex items-center justify-center h-screen">
       <div>
-        <Outlet />
+        <div className="mb-14 md:mb-16">
+          <img src={LogoIcon} alt="Logo" />
+        </div>
+        <div>
+          <Outlet />
+        </div>
       </div>
     </div>
   );
