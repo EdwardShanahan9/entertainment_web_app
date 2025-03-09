@@ -1,16 +1,17 @@
 import React from "react";
 import { Link } from "react-router";
-import AuthContainer from "../../../AuthContainer/AuthContainer";
+import AuthContainer from "../../../components/AuthContainer/AuthContainer";
+import Input from "../../../components/Input/Input";
 
 const Register = () => {
   return (
     <AuthContainer title="Sign Up">
       <form>
-        <input type="email" placeholder="Email Address" />
+        <Input type="email" placeholder="Email Address" />
 
-        <input type="password" placeholder="Password" />
+        <Input type="password" placeholder="Password" />
 
-        <input type="password" placeholder="Repeat Password" />
+        <Input type="password" placeholder="Repeat Password" />
 
         <button>Create an account</button>
       </form>
