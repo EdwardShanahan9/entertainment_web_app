@@ -6,7 +6,7 @@ const AuthLayout = () => {
   return (
     <div className="flex items-center justify-center h-screen">
       <div>
-        <div className="mb-14 md:mb-16 flex items-center justify-center">
+        <div className="mb-14 md:mb-16 flex items-center justify-center ">
           <img src={LogoIcon} alt="Logo" />
         </div>
         <div>

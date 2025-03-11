@@ -18,7 +18,7 @@
 @layer base {
   body {
     font-family: "Outfit", sans-serif;
-    background-color: var(--color-dark-blue);
+    background-color: var(--color-dark);
   }
 
   h1 {
