@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router";
 import AuthContainer from "../../../components/AuthContainer/AuthContainer";
 import Input from "../../../components/Input/Input";
+import Button from "../../../components/Button/Button";
 
 const Register = () => {
   return (
@@ -13,11 +14,14 @@ const Register = () => {
 
         <Input type="password" placeholder="Repeat Password" />
 
-        <button>Create an account</button>
+        <Button text="Create an account" />
       </form>
 
-      <p>
-        Alreadt have an account? <Link to="/login">Login</Link>
+      <p className="text-[15px] text-white text-center">
+        Alreadt have an account?{" "}
+        <Link className="text-primary" to="/login">
+          Login
+        </Link>
       </p>
     </AuthContainer>
   );
