@@ -6,10 +6,19 @@ import Button from "../../../components/Button/Button";
 
 const Register = () => {
   const [errorMessage, setErrorMessage] = useState(false);
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [repeatPassword, setRepeatPassword] = useState("");
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+
+    console.log("Good!");
+  };
 
   return (
     <AuthContainer title="Sign Up">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="relative">
           <Input type="email" placeholder="Email Address" />
 
