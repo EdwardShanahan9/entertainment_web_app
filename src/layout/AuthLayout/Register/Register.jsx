@@ -5,7 +5,7 @@ import Input from "../../../components/Input/Input";
 import Button from "../../../components/Button/Button";
 
 const Register = () => {
-  const [errorMessage, setErrorMessage] = useState(false);
+  const [errorMessage, setErrorMessage] = useState({});
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [repeatPassword, setRepeatPassword] = useState("");
@@ -13,18 +13,32 @@ const Register = () => {
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    console.log("Good!");
+    let errors = {};
+
+    if (!email) errors.email = "Can’t be empty";
+    if (!password) errors.password = "Can’t be empty";
+    if (!repeatPassword) errors.repeatPassword = "Can’t be empty";
+
+    if (password !== repeatPassword) {
+      errors.repeatPassword = "Password don't match";
+    }
+
+    setErrorMessage(errors);
   };
 
   return (
     <AuthContainer title="Sign Up">
       <form onSubmit={handleSubmit}>
         <div className="relative">
-          <Input type="email" placeholder="Email Address" />
+          <Input
+            type="email"
+            placeholder="Email Address"
+            handleChange={(event) => setEmail(event.target.value)}
+          />
 
-          {errorMessage ? (
+          {errorMessage.email ? (
             <span className="text-sm text-primary absolute right-4 top-0 font-light">
-              Can’t be empty
+              {errorMessage.email}
             </span>
           ) : (
             ""
@@ -32,11 +46,16 @@ const Register = () => {
         </div>
 
         <div className="relative">
-          <Input type="password" placeholder="Password" />
+          <Input
+            type="password"
+            placeholder="Password"
+            value={password}
+            handleChange={(event) => setPassword(event.target.value)}
+          />
 
-          {errorMessage ? (
+          {errorMessage.password ? (
             <span className="text-sm text-primary absolute right-4 top-0 font-light">
-              Can’t be empty
+              {errorMessage.password}
             </span>
           ) : (
             ""
@@ -44,11 +63,16 @@ const Register = () => {
         </div>
 
         <div className="relative">
-          <Input type="password" placeholder="Repeat Password" />
+          <Input
+            type="password"
+            placeholder="Repeat Password"
+            value={repeatPassword}
+            handleChange={(event) => setRepeatPassword(event.target.value)}
+          />
 
-          {errorMessage ? (
+          {errorMessage.repeatPassword ? (
             <span className="text-sm text-primary absolute right-4 top-0 font-light">
-              Can’t be empty
+              {errorMessage.repeatPassword}
             </span>
           ) : (
             ""
@@ -59,7 +83,7 @@ const Register = () => {
       </form>
 
       <p className="text-[15px] text-white text-center">
-        Alreadt have an account?{" "}
+        Already have an account?{" "}
         <Link className="text-primary ml-2" to="/login">
           Login
         </Link>
