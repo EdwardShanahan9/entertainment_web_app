@@ -34,6 +34,7 @@ const Register = () => {
             type="email"
             placeholder="Email Address"
             handleChange={(event) => setEmail(event.target.value)}
+            error={errorMessage.email}
           />
 
           {errorMessage.email ? (
@@ -51,6 +52,7 @@ const Register = () => {
             placeholder="Password"
             value={password}
             handleChange={(event) => setPassword(event.target.value)}
+            error={errorMessage.password}
           />
 
           {errorMessage.password ? (
@@ -68,6 +70,7 @@ const Register = () => {
             placeholder="Repeat Password"
             value={repeatPassword}
             handleChange={(event) => setRepeatPassword(event.target.value)}
+            error={errorMessage.repeatPassword}
           />
 
           {errorMessage.repeatPassword ? (
