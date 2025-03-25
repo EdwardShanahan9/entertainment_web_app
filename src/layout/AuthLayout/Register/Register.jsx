@@ -23,6 +23,10 @@ const Register = () => {
       errors.repeatPassword = "Password don't match";
     }
 
+    if (password.length < 6) {
+      errors.password = "8 or more characters";
+    }
+
     setErrorMessage(errors);
   };
 

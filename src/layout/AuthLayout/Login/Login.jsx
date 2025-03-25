@@ -62,9 +62,9 @@ const Login = () => {
       </form>
 
       <p className="text-[15px] text-white text-center">
-        Already have an account?{" "}
-        <Link className="text-primary ml-2" to="/login">
-          Login
+        Don’t have an account?{" "}
+        <Link className="text-primary ml-2" to="/">
+          Sign Up
         </Link>
       </p>
     </AuthContainer>
